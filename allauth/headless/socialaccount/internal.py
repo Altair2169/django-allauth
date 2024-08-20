@@ -26,6 +26,8 @@ def on_authentication_error(
     """
     Called at a time when it is not clear whether or not this is a headless flow.
     """
+    from traceback import format_exc
+    print(f"Exception is ", format_exc(exception), f"and provider is {provider}")
     state = None
     if extra_context:
         state = extra_context.get("state")
